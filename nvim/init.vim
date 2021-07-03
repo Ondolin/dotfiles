@@ -4,13 +4,15 @@ set ignorecase
 set mouse=a
 set completeopt=noinsert,menuone,noselect,preview
 "set termguicolors
+set scrolloff=8
+set clipboard+=unnamedplus
 
 set path=.,,**
 
 filetype on
 filetype plugin indent on
 
-let mapleader=","
+let mapleader=" "
 
 call plug#begin('~/.local/share/nvim/plugged')
 
