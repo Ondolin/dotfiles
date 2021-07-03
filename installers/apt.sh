@@ -14,7 +14,7 @@ apt install -y curl
 
 apt install -y zsh
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | echo \"y\")" 
 
 apt install -y vim
 
