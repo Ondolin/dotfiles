@@ -8,7 +8,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/.."
 
-apt install -y git-all
+apt install -y git
 
 apt install -y curl
 
@@ -30,7 +30,7 @@ apt install -y nodejs
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-mkdir $HOME/.config
+mkdir -p $HOME/.config
 
 ln -s $DIR/nvim $HOME/.config/nvim
 
