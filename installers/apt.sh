@@ -32,8 +32,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 mkdir -p $HOME/.config
 
 ln -s $DIR/nvim $HOME/.config/nvim
-ln -s $DIR/zsh/.zshrc $HOME
-ln -s $DIR/zsh/.zsh_alias $HOME
 
 nvim +'PlugInstall --sync' +qa
 
