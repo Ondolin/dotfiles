@@ -8,25 +8,29 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/.."
 
-sudo apt install -y git
+apt install -y git-all
 
-sudo apt install -y zsh
+apt install -y curl
+
+apt install -y zsh
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-sudo apt install -y vim
+apt install -y vim
 
-sudo apt install -y neovim
+apt install -y neovim
 
-sudo apt install -y python
+apt install -y python
 
-sudo apt install -y python-neovim
-sudo apt install -y python3-neovim
+apt install -y python-neovim
+install -y python3-neovim
 
-sudo apt install -y nodejs
+apt install -y nodejs
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+mkdir $HOME/.config
 
 ln -s $DIR/nvim $HOME/.config/nvim
 
