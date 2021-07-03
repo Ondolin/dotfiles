@@ -23,7 +23,7 @@ python3 -m pip install pynvim
 #apt install -y python-neovim
 #apt install -y python3-neovim
 
-curl -sL https://deb.nodesource.com/setup_14.x -o setup_14.sh | bash -
+curl -sL https://deb.nodesource.com/setup_16.x | bash -
 
 apt install -y nodejs npm
 
