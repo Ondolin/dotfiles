@@ -10,11 +10,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/.."
 
 apt-get update
 
-apt install -y curl
-
-apt install -y zsh
-
-apt install -y vim neovim
+apt install -y curl zsh vim neovim exa
 
 apt install -y python pip
 
