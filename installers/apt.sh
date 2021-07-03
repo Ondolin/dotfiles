@@ -8,9 +8,6 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/.."
 
-# makes new node version available
-curl -sL https://deb.nodesource.com/setup_16.x | bash -
-
 apt-get update
 
 apt install -y curl
@@ -26,6 +23,10 @@ python3 -m pip install pynvim
 #apt install -y python-neovim
 #apt install -y python3-neovim
 
+# makes new node version available
+curl -sL https://deb.nodesource.com/setup_16.x | bash -
+
+apt update
 
 apt install -y nodejs npm
 
