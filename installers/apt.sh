@@ -24,9 +24,7 @@ python3 -m pip install pynvim
 #apt install -y python3-neovim
 
 # makes new node version available
-curl -sL https://deb.nodesource.com/setup_16.x | bash -
-
-apt update
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 
 apt install -y nodejs npm
 
