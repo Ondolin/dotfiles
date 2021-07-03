@@ -14,3 +14,5 @@ fi
 
 ln -s $DIR/zsh/.zshrc $HOME
 ln -s $DIR/zsh/.zsh_alias $HOME
+
+source ~/.zshrc
