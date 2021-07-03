@@ -39,7 +39,7 @@ ln -s $DIR/nvim $HOME/.config/nvim
 
 nvim +'PlugInstall --sync' +qa
 
-# installing once was not enough... dont ask why... i have no idea
+# installing once was not enough... don't ask why... i have no idea
 apt install -y nodejs
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
