@@ -1,0 +1,53 @@
+alias uni="goto uni"
+alias rpg="goto rpg"
+alias dev="cd ~/Development"
+
+alias vim="nvim"
+alias v="nvim"
+alias nano="echo 'I will never use nano again!'; sleep 3; nvim"
+
+alias sudo="sudo "
+
+alias ip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1"
+alias ws="webstorm"
+alias o="open"
+
+# alias rm="echo 'Do not use rm. Use tr (trash) instead.'"
+# alias rm!="rm"
+alias tr="trash"
+
+alias f="ranger"
+alias c="clear"
+alias e="exit"
+alias q="exit"
+
+# exa commands
+# general use
+alias ls='exa'                                                          # ls
+alias l='exa -lbF --git --icons --header'                                                # list, size, type, git
+alias ll='exa -lbGF --git --icons --header'                                             # long list
+alias llm='exa -lbGd --git --sort=modified --icons --header'                            # long list, modified date sort
+alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
+
+# specialty views
+alias lS='exa -1'                                                              # one column, just names
+alias lt='exa --tree --level=2 --icons' 
+
+alias m="goto"
+
+# print cow at terminal start
+alias cow="clear; fortune ~/.config/fortunes/fortunes | cowsay | lolcat"
+
+alias cp="cp -iv -r"
+alias mv="mv -iv"
+alias rm="rm -iv"
+alias mkdir="mkdir -pv"
+
+alias calc="qalc"
+
+alias bs-downloads="~/Development/tools/bs-downloads.sh"
+
+sdp() {
+    batdiff --delta $3 <(sd -p $1 $2 $3)}
+}
