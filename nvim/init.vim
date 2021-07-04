@@ -6,6 +6,7 @@ set completeopt=noinsert,menuone,noselect,preview
 "set termguicolors
 set scrolloff=8
 set clipboard+=unnamedplus
+set signcolumn=yes
 
 set path=.,,**
 
@@ -18,6 +19,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " themes
 Plug 'sainnhe/forest-night'
+Plug 'sainnhe/everforest'
 
 " code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

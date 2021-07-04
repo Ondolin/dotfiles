@@ -19,22 +19,17 @@ This repository contains the dotfiles for several CLI tools I use.
 - [exa](https://github.com/ogham/exa)
 
 
+## Optional stuff
+
+- [Ranger](https://github.com/ranger/ranger)
+
 ## Installation
 
-### With the APT package manager (eg. Ubuntu)
+Currently there are two supported package managers (apt and pacman). Brew will follow in the near future.
 
-1. Install git (`apt install git`)
-2. Clone this Repo (`git clone https://github.com/Ondolin/dotfiles.git`)
-3. Execute the Installation file (`sudo sh ./dotfiles/installers/apt.sh`)
-4. Execute the ZSH file (`sudo sh ./dotfiles/installers/zsh.sh`)
-5. confirm removing your old files (there will be no backup)
+To install the required programs and some configs for them run the following commands:
 
-### Pacman (eg. Arch Linux)
+1. `sudo sh ./install.sh`
+2. `sudo sh ./install_zsh_config.sh`
 
-1. Install git (`pacman -S git`)
-2. Clone this Repo (`git clone https://github.com/Ondolin/dotfiles.git`)
-3. Execute the Installation file (`sudo sh ./dotfiles/installers/apt.sh`)
-4. Execute the ZSH file (`sudo sh ./dotfiles/installers/zsh.sh`)
-5. confirm removing your old files (there will be no backup)
-
-### Homebrew (comming soon)
+WARNING: Make sure you save your old config files before the get overwritten.
