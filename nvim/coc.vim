@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-texlab', 'coc-tabnine']
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-texlab', 'coc-tabnine', 'coc-clangd']
 
 let g:nvim_typescript#javascript_support=1
 let g:nvim_typescript#vue_support=1
@@ -23,10 +23,10 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 "if has("nvim-0.5.0") || has("patch-8.1.1564")
-"  " Recently vim can merge signcolumn and number column into one
-"  set signcolumn=number
+  "" Recently vim can merge signcolumn and number column into one
+  "set signcolumn=number
 "else
-"  set signcolumn=yes
+  "set signcolumn=yes
 "endif
 
 " Use tab for trigger completion with characters ahead and navigate.

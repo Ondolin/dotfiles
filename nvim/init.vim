@@ -42,6 +42,9 @@ Plug 'honza/vim-snippets'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 " --------------------
