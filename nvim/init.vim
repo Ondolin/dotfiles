@@ -45,6 +45,8 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
+Plug 'mhinz/vim-startify'
+
 call plug#end()
 
 " --------------------
