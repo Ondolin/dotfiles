@@ -48,6 +48,8 @@ alias calc="qalc"
 
 alias bs-downloads="~/Development/tools/bs-downloads.sh"
 
+alias pandoc="pandoc -d defaults"
+
 sdp() {
     batdiff --delta $3 <(sd -p $1 $2 $3)}
 }
