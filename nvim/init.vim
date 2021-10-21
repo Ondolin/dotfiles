@@ -101,5 +101,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Use fzf when opening a directory
 autocmd VimEnter * if isdirectory(expand("<amatch>")) | exe 'Files! '.expand("<amatch>") | endif
-nmap <leader>b :Buffers <CR>
-nmap <leader>f :Files <CR>
+let loaded_netrwPlugin = 1
+
+nnoremap <leader>b :Buffers <CR>
+nnoremap <leader>f :Files <CR>
