@@ -1,7 +1,3 @@
-alias uni="goto uni"
-alias rpg="goto rpg"
-alias dev="cd ~/Development"
-
 alias vim="nvim"
 alias v="nvim"
 alias nano="echo 'I will never use nano again!'; sleep 3; nvim"
