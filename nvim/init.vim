@@ -49,6 +49,8 @@ Plug 'tpope/vim-surround'
 
 Plug 'mhinz/vim-startify'
 
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " --------------------
@@ -96,3 +98,8 @@ runtime ./vim-tex.vim
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Use fzf when opening a directory
+autocmd VimEnter * if isdirectory(expand("<amatch>")) | exe 'Files! '.expand("<amatch>") | endif
+nmap <leader>b :Buffers <CR>
+nmap <leader>f :Files <CR>
