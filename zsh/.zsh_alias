@@ -37,7 +37,8 @@ alias lt='exa --tree --level=2 --icons'
 alias m="goto"
 
 # print cow at terminal start
-alias cow="clear; fortune ~/.config/fortunes/fortunes | cowsay | lolcat"
+#alias cow="clear; fortune ~/.config/fortunes/fortunes | cowsay | lolcat"
+alias cow="clear; (curl -s -Hs \"Accept: text/plain\" https://icanhazdadjoke.com/ || echo \"You have no internet connection!\") | cowsay | lolcat"
 
 alias cp="cp -iv -r"
 alias mv="mv -iv"
@@ -46,10 +47,12 @@ alias mkdir="mkdir -pv"
 
 alias calc="qalc"
 
-alias bs-downloads="~/Development/tools/bs-downloads.sh"
-
 alias pandoc="pandoc -d defaults"
 
+alias xcode="xed"
+
 sdp() {
-    batdiff --delta $3 <(sd -p $1 $2 $3)}
+    batdiff --delta $3 <(sd -p $1 $2 $3)
 }
+
+alias spt-fav="spt play --device=\"Marie\'s Soundanlage\" --random --uri https://open.spotify.com/playlist/4b62svwQ920Tb3WVOzN3tx\?si\=804173e5b8544bd4"
