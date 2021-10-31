@@ -120,15 +120,6 @@ nnoremap <leader>f :Files <CR>
 " Get into insert mode when starting to commit
 autocmd User VimagitEnterCommit startinsert
 
-" Close Vimagit window after committed
-autocmd User VimagitEnterCommit setlocal textwidth=72
-autocmd User VimagitLeaveCommit setlocal textwidth=0
-
-autocmd User VimagitUpdateFile
-    \ if ( exists("*gitgutter#process_buffer") ) |
-    \ 	call gitgutter#process_buffer(bufnr(g:magit_last_updated_buffer), 0) |
-    \ endif
-
 " -------------------
 " Usefull functions
 " -------------------
