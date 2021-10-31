@@ -111,6 +111,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Use fzf when opening a directory
 autocmd VimEnter * if isdirectory(expand("<amatch>")) | exe 'Files! '.expand("<amatch>") | endif
+autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Startify | Files | wincmd w | endif
+
 let loaded_netrwPlugin = 1
 
 nnoremap <leader>b :Buffers <CR>
@@ -122,6 +125,7 @@ nnoremap <leader>f :Files <CR>
 
 " Get into insert mode when starting to commit
 autocmd User VimagitEnterCommit startinsert
+nnoremap <leader>g :Magit <CR>
 
 " -------------------
 " Usefull functions
@@ -139,4 +143,4 @@ com! DiffSaved call s:DiffWithSaved()
 " Mundo condif
 set undofile
 set undodir=~/.vim/undo
-
+nnoremap <leader>d :MundoToggle <CR>
