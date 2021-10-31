@@ -102,12 +102,36 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" -------------------
+"  FZF
+" -------------------
+
 " Use fzf when opening a directory
 autocmd VimEnter * if isdirectory(expand("<amatch>")) | exe 'Files! '.expand("<amatch>") | endif
 let loaded_netrwPlugin = 1
 
 nnoremap <leader>b :Buffers <CR>
 nnoremap <leader>f :Files <CR>
+
+" -------------------
+" Git stuff
+" -------------------
+
+" Get into insert mode when starting to commit
+autocmd User VimagitEnterCommit startinsert
+
+" Close Vimagit window after committed
+autocmd User VimagitEnterCommit setlocal textwidth=72
+autocmd User VimagitLeaveCommit setlocal textwidth=0
+
+autocmd User VimagitUpdateFile
+    \ if ( exists("*gitgutter#process_buffer") ) |
+    \ 	call gitgutter#process_buffer(bufnr(g:magit_last_updated_buffer), 0) |
+    \ endif
+
+" -------------------
+" Usefull functions
+" -------------------
 
 function! s:DiffWithSaved()
   let filetype=&ft
