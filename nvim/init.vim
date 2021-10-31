@@ -49,7 +49,10 @@ Plug 'tpope/vim-surround'
 
 Plug 'mhinz/vim-startify'
 
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
+
+"Plug 'github/copilot.vim'
+Plug 'jreybert/vimagit'
 
 call plug#end()
 
