@@ -54,6 +54,9 @@ Plug 'tpope/vim-fugitive'
 "Plug 'github/copilot.vim'
 Plug 'jreybert/vimagit'
 
+"Plug 'sjl/gundo.vim'
+Plug 'simnalamburt/vim-mundo'
+
 call plug#end()
 
 " --------------------
@@ -132,3 +135,8 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+" Mundo condif
+set undofile
+set undodir=~/.vim/undo
+
