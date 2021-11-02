@@ -37,8 +37,7 @@ Plug 'junegunn/fzf.vim'
 " latex
 Plug 'lervag/vimtex'
 
-" Track the engine
-Plug 'SirVer/ultisnips'
+" Snippets repo (managed local by coc-snippets)
 Plug 'honza/vim-snippets'
 
 Plug 'vim-pandoc/vim-pandoc'
@@ -101,17 +100,6 @@ runtime ./coc.vim
 " -------------------
 
 runtime ./vim-tex.vim
-
-" -------------------
-" ultisnips
-" -------------------
-
-" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
-" - https://github.com/Valloric/YouCompleteMe
-" - https://github.com/nvim-lua/completion-nvim
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " -------------------
 "  FZF

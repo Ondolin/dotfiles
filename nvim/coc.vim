@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-texlab', 'coc-tabnine', 'coc-clangd', 'coc-sh']
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-texlab', 'coc-tabnine', 'coc-clangd', 'coc-sh', 'coc-rls', 'coc-snippets']
 
 let g:nvim_typescript#javascript_support=1
 let g:nvim_typescript#vue_support=1
@@ -164,3 +164,19 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Mappings for coc-snippets
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
