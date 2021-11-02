@@ -6,7 +6,7 @@ set mouse=a
 set completeopt=noinsert,menuone,noselect,preview
 "set termguicolors
 set scrolloff=8
-set clipboard+=unnamedplus
+"set clipboard+=unnamedplus
 set signcolumn=yes
 set ruler
 
