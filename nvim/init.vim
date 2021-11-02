@@ -40,12 +40,14 @@ Plug 'lervag/vimtex'
 " Snippets repo (managed local by coc-snippets)
 Plug 'honza/vim-snippets'
 
+" Markdown
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
+" Start sccreen
 Plug 'mhinz/vim-startify'
 
 " Git functions
