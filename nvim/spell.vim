@@ -13,3 +13,13 @@ function! FzfSpell()
 endfunction
 nnoremap z= :call FzfSpell()<CR>
 
+" ------------
+"  LanguageTool
+" ------------
+
+" let g:languagetool_server_jar='$HOME/Development/tools/cli-tools/languagetool/LanguageTool-5.5-stable/languagetool-server.jar'
+let g:languagetool_cmd='/usr/local/bin/languagetool'
+
+noremap <leader>lc :LanguageToolCheck <CR>
+noremap <leader>ln :lne <CR>
+noremap <leader>lt :LanguageToolClear <CR>

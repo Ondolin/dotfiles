@@ -66,6 +66,9 @@ Plug 'tpope/vim-repeat'
 " Multiple cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+" Grammar checking
+Plug 'dpelle/vim-LanguageTool' 
+
 call plug#end()
 
 " --------------------
