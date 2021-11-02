@@ -12,6 +12,9 @@ set ruler
 
 set path=.,,**
 
+set undofile
+set undodir=~/.vim/undo
+
 filetype on
 filetype plugin indent on
 
@@ -102,14 +105,6 @@ runtime ./spell.vim
 
 runtime ./coc.vim
 
-" How each level is indented and what to prepend.
-" This could make the display more compact or more spacious.
-" e.g., more compact: ["▸ ", ""]
-" Note: this option only works for the kind renderer, not the tree renderer.
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-
-" Executive used when opening vista sidebar without specifying it.
-" See all the avaliable executives via `:echo g:vista#executives`.
 let g:vista_default_executive = 'coc'
 
 let g:vista_fzf_preview = ['right:50%']
@@ -120,6 +115,7 @@ let g:vista#renderer#icons = {
 \   "variable": "\uf71b",
 \  }
 
+nnoremap <leader>o :Vista!! <CR>
 
 " -------------------
 " vimtex
@@ -130,11 +126,6 @@ runtime ./vim-tex.vim
 " -------------------
 "  FZF
 " -------------------
-
-" Use fzf when opening a directory
-autocmd VimEnter * if isdirectory(expand("<amatch>")) | exe 'Files! '.expand("<amatch>") | endif
-autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Startify | Files | wincmd w | endif
 
 let loaded_netrwPlugin = 1
 
@@ -163,6 +154,22 @@ endfunction
 com! DiffSaved call s:DiffWithSaved()
 
 " Mundo condif
-set undofile
-set undodir=~/.vim/undo
 nnoremap <leader>d :MundoToggle <CR>
+
+" -------------------
+" Auto close buffer
+" -------------------
+
+" Thanks to romainl from https://stackoverflow.com/questions/69787994/close-vim-if-no-unhidden-buffers-open/69805143#69805143
+augroup auto_close_win
+  autocmd!
+  autocmd BufEnter * call s:quit_current_win()
+augroup END
+
+function! s:quit_current_win() abort
+  let quit_filetypes = ['magit', 'vista', 'MundoDiff']
+  let buftype = getbufvar(bufnr(), '&filetype')
+  if winnr('$') == 1 && index(quit_filetypes, buftype) != -1
+    quit
+  endif
+endfunction
