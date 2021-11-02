@@ -49,13 +49,21 @@ Plug 'tpope/vim-surround'
 
 Plug 'mhinz/vim-startify'
 
+" Git functions
 Plug 'tpope/vim-fugitive'
-
-"Plug 'github/copilot.vim'
 Plug 'jreybert/vimagit'
 
-"Plug 'sjl/gundo.vim'
+" Plug 'github/copilot.vim'
+
+" File diffs
+" Plug 'sjl/gundo.vim'
 Plug 'simnalamburt/vim-mundo'
+
+" enable repeat with . for plugin commands
+Plug 'tpope/vim-repeat'
+
+" Multiple cursors
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
 
