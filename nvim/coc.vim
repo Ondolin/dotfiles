@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-texlab', 'coc-tabnine', 'coc-clangd', 'coc-sh', 'coc-rls', 'coc-snippets']
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-vimtex', 'coc-tabnine', 'coc-clangd', 'coc-sh', 'coc-rust-analyzer', 'coc-snippets']
 
 let g:nvim_typescript#javascript_support=1
 let g:nvim_typescript#vue_support=1

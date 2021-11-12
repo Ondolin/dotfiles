@@ -7,7 +7,7 @@ let g:tex_conceal='abdmg'
 "let g:vimtex_complete_enabled = 1
 "let g:vimtex_complete_close_braces = 1
 let g:vimtex_fold_enabled = 0
-let g:vimtex_view_general_viewer = 'evince'
+" let g:vimtex_view_general_viewer = 'evince'
 let g:tex_flavor = 'latex'
 
 autocmd FileType tex :NoMatchParen

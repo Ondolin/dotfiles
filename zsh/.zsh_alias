@@ -47,6 +47,12 @@ alias pandoc="pandoc -d defaults"
 
 alias xcode="xed"
 
+alias ps="procs --tree"
+
+alias dig="dog"
+
+alias df="duf"
+
 sdp() {
     batdiff --delta $3 <(sd -p $1 $2 $3)
 }
