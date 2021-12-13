@@ -13,6 +13,7 @@ This repository contains the dotfiles for several CLI tools I use.
 
 - ZSH
 - [Oh my ZSH](https://ohmyz.sh/#install)
+- [Starship](https://starship.rs/)
 
 ### Other scripts
 
