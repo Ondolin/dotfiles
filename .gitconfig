@@ -1,0 +1,49 @@
+[user]
+	name = Ondolin
+	email = developer@ondolin.de
+	signingKey = ED01D044AA9CD79A
+[core]
+    autocrlf = input
+	editor = nvim
+	excludesFile = /Users/kaiser/.config/globalGitIgnore
+    pager = delta
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
+[alias]
+	plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[init]
+	defaultBranch = master
+[interactive]
+    diffFilter = delta --color-only
+
+[diff]
+    colorMoved = default
+
+[delta]
+    side-by-side = true
+    features = line-numbers decorations
+	hunk-header-style = file syntax  # use new attribute
+	file-style = omit # set the color for the file path, but omit the main file section
+    hunk-header-file-style = bold red
+	hunk-header-decoration-style = red box ul
+    whitespace-error-style = 22 reverse
+
+[delta "line-numbers"]
+    line-numbers = true
+    line-numbers-minus-style = red
+    line-numbers-zero-style = "#444444"
+    line-numbers-plus-style = green
+    line-numbers-left-format = "{nm:^4}┊"
+    line-numbers-right-format = "{np:^4}│"
+    line-numbers-left-style = red
+    line-numbers-right-style = green
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = yellow box
