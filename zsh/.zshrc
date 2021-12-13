@@ -18,16 +18,11 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 IST_STAMPS="yyyy-mm-dd"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf cp cargo)
+plugins=(git fzf cp cargo zsh-autosuggestions)
+
 
 source $ZSH/oh-my-zsh.sh
 source ~/Development/tools/cli-tools/goto/goto.sh
-source ~/.zsh_alias
 
 # User configuration
 
@@ -60,6 +55,9 @@ function ranger {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(zoxide init zsh --cmd cd)"
+
+source ~/.zsh_alias

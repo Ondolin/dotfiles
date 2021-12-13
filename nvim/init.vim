@@ -4,7 +4,7 @@ set ignorecase
 set smartcase
 set mouse=a
 set completeopt=noinsert,menuone,noselect,preview
-"set termguicolors
+" set termguicolors
 set scrolloff=8
 "set clipboard+=unnamedplus
 set signcolumn=yes
@@ -57,7 +57,7 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'jreybert/vimagit'
 
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 " File diffs
 " Plug 'sjl/gundo.vim'
@@ -73,6 +73,8 @@ Plug 'liuchengxu/vista.vim'
 
 " Grammar checking
 Plug 'dpelle/vim-LanguageTool' 
+
+Plug 'AndrewRadev/splitjoin.vim'
 
 call plug#end()
 
@@ -127,7 +129,7 @@ runtime ./vim-tex.vim
 "  FZF
 " -------------------
 
-let loaded_netrwPlugin = 1
+" let loaded_netrwPlugin = 1
 
 nnoremap <leader>b :Buffers <CR>
 nnoremap <leader>f :Files <CR>
@@ -157,9 +159,10 @@ com! DiffSaved call s:DiffWithSaved()
 nnoremap <leader>d :MundoToggle <CR>
 
 " -------------------
-" Auto close buffer
+" Buffer
 " -------------------
 
+" Auto close
 " Thanks to romainl from https://stackoverflow.com/questions/69787994/close-vim-if-no-unhidden-buffers-open/69805143#69805143
 augroup auto_close_win
   autocmd!
@@ -173,3 +176,10 @@ function! s:quit_current_win() abort
     quit
   endif
 endfunction
+
+imap <silent><script><expr> <C-J> copilot#Accept("Test")
+let g:copilot_no_tab_map = v:true
+
+highlight CopilotSuggestion guifg=#eeeeee ctermfg=8
+
+runtime ./buffer-magic.vim

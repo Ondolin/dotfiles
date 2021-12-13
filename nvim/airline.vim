@@ -24,3 +24,15 @@ let g:airline#extensions#default#layout = [
       "\ [ 'x', 'y', 'z', 'error', 'warning' ]
       \ [ 'x', 'y', 'z']
       \ ]
+
+nnoremap <C-S-tab> :bprevious<CR>
+nnoremap <C-tab>   :bnext<CR>
+
+" CTRL-Tab is next tab
+noremap <C-Tab> :<C-U>bnext<CR>
+inoremap <C-Tab> <C-\><C-N>:bnext<CR>
+cnoremap <C-Tab> <C-C>:bnext<CR>
+" CTRL-SHIFT-Tab is previous tab
+noremap <C-S-Tab> :<C-U>bnext<CR>
+inoremap <C-S-Tab> <C-\><C-N>:bnext<CR>
+cnoremap <C-S-Tab> <C-C>:bnext<CR>
