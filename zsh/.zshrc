@@ -18,7 +18,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 IST_STAMPS="yyyy-mm-dd"
 
-plugins=(git fzf cp cargo zsh-autosuggestions)
+plugins=(git fzf cp rust zsh-autosuggestions)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -56,6 +56,7 @@ function ranger {
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(starship init zsh)"
+source ~/.config/mcfly.zsh
 
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(zoxide init zsh --cmd cd)"
