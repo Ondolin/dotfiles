@@ -14,7 +14,7 @@ lspconfig.prolog_lsp.setup{
 }
 
 require("grammar-guard").init()
-require("lspconfig").grammar_guard.setup({
+lspconfig.grammar_guard.setup({
       settings = {
           ltex = {
               enabled = { "latex", "tex", "bib", "markdown" },
@@ -32,3 +32,5 @@ require("lspconfig").grammar_guard.setup({
           },
       },
   })
+
+lspconfig.tsserver.setup{}

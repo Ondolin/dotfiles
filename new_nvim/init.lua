@@ -8,6 +8,7 @@ require("config/setup")
 require("config/rust-tools")
 require("config/prolog")
 require("config/telescope")
+require("config/latex")
 
 require("mappings")
 
