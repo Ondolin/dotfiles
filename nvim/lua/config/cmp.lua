@@ -57,7 +57,13 @@ cmp.setup({
       before = function (entry, vim_item)
         -- ...
         return vim_item
-      end
+      end,
+      menu = ({
+          buffer = "[BUF]",
+          nvim_lsp = "[LSP]",
+          path = "[PATH]",
+          vsnip = "[SNIP]"
+      })
     })
   },
   sources = cmp.config.sources({
