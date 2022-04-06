@@ -35,3 +35,5 @@ lspconfig.grammar_guard.setup({
   })
 
 lspconfig.tsserver.setup{}
+
+lspconfig.sumneko_lua.setup{}

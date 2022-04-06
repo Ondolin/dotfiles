@@ -1,7 +1,7 @@
 local use = require('packer').use
 require('packer').startup(function()
 
-  use 'dracula/vim' -- Theme	
+  use 'dracula/vim' -- Theme
 
   -- Statusline
   use 'vim-airline/vim-airline'
@@ -17,15 +17,19 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  
+
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/cmp-nvim-lua'
+
   use "rafamadriz/friendly-snippets"
 
   use "lukas-reineke/indent-blankline.nvim"
 
   -- set relatrive line numbers only when current buffer is selected
   use 'jeffkreeftmeijer/vim-numbertoggle'
+
+  use 'airblade/vim-gitgutter'
 
   -- =====================
   -- CODING TOOLS
@@ -53,9 +57,9 @@ require('packer').startup(function()
   })
 
   use ({
-    'nvim-telescope/telescope-fzf-native.nvim', 
-    run = 'make', 
-    requires = { { "nvim-telescope/telescope.nvim" } } 
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make',
+    requires = { { "nvim-telescope/telescope.nvim" } }
   })
 
   use {'nvim-telescope/telescope-ui-select.nvim' }
