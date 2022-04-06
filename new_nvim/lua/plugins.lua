@@ -20,6 +20,7 @@ require('packer').startup(function()
   
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
+  use "rafamadriz/friendly-snippets"
 
   use "lukas-reineke/indent-blankline.nvim"
 
@@ -68,6 +69,14 @@ require('packer').startup(function()
     config = function()
       require('neoclip').setup()
     end,
+  }
+
+  use {
+    "brymer-meneses/grammar-guard.nvim",
+    requires = {
+        "neovim/nvim-lspconfig",
+        "williamboman/nvim-lsp-installer"
+    }
   }
 
 end)

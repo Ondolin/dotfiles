@@ -94,10 +94,20 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["fzy-lua-native"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/fzy-lua-native",
     url = "https://github.com/romgrk/fzy-lua-native"
+  },
+  ["grammar-guard.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/grammar-guard.nvim",
+    url = "https://github.com/brymer-meneses/grammar-guard.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -118,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
