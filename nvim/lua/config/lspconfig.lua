@@ -15,6 +15,7 @@ lspconfig.prolog_lsp.setup{
 
 require("grammar-guard").init()
 lspconfig.grammar_guard.setup({
+    cmd = { '/usr/local/bin/ltex-ls' },
       settings = {
           ltex = {
               enabled = { "latex", "tex", "bib", "markdown" },
