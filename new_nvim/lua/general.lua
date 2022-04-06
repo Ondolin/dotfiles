@@ -27,5 +27,6 @@ vim.opt.timeoutlen = 500
 vim.opt.termguicolors = true
 vim.opt.textwidth = 80
 vim.opt.colorcolumn = "80"
+vim.opt.scrolloff = 8
 
 vim.opt.completeopt = "menuone,noinsert,noselect"

@@ -5,3 +5,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 lspconfig.pyright.setup{
     capabilities = capabilities
 }
+
+lspconfig.texlab.setup{
+    capabilities = capabilities
+}

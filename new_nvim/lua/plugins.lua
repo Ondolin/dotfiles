@@ -17,6 +17,8 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
+  use "lukas-reineke/indent-blankline.nvim"
+
   use 'simrat39/rust-tools.nvim'
   
   -- Statusline
@@ -26,5 +28,28 @@ require('packer').startup(function()
   use 'jeffkreeftmeijer/vim-numbertoggle'
 
   use("windwp/nvim-autopairs")
+
+  -- Latex support
+  use("lervag/vimtex")
+
+  -- =====================
+  -- TELESCOPE
+  -- =====================
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" }, { "nvim-lua/popup.nvim" } },
+  })
+  use({
+    "romgrk/fzy-lua-native",
+    requires = { { "nvim-telescope/telescope.nvim" } },
+  })
+
+  use ({
+    'nvim-telescope/telescope-fzf-native.nvim', 
+    run = 'make', 
+    requires = { { "nvim-telescope/telescope.nvim" } } 
+  })
+
+  -- use {'nvim-telescope/telescope-ui-select.nvim' }
 
 end)

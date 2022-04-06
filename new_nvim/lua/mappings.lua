@@ -1,15 +1,15 @@
 
 local nnoremap = function(lhs, rhs, silent)
     vim.api.nvim_set_keymap("n", lhs, rhs, { noremap = true, silent = silent })
-  end
+end
   
-  local inoremap = function(lhs, rhs)
+local inoremap = function(lhs, rhs)
     vim.api.nvim_set_keymap("i", lhs, rhs, { noremap = true })
-  end
+end
   
-  local vnoremap = function(lhs, rhs)
+local vnoremap = function(lhs, rhs)
     vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true })
-  end
+end
 
 -- Escape redraws the screen and removes any search highlighting.
 nnoremap("<esc>", ":noh<return><esc>")
@@ -36,3 +36,19 @@ nnoremap(
   true
 )
 nnoremap("<Leader>lE", "<cmd>LspTroubleWorkspaceToggle<CR>", true)
+
+-- Telescope
+nnoremap("<Leader>f", '<cmd>Telescope find_files<CR>')
+-- nnoremap("/", '<cmd>Telescope current_buffer_fuzzy_find<CR>')
+inoremap(
+  "<C-f>",
+  '<Esc> :lua require("telescope").search_in_buffer()<CR>'
+)
+--nnoremap(
+--  "<Leader>fg",
+--  '<Esc> :lua require("telescope.builtin").live_grep()<CR>'
+--)
+--nnoremap(
+--  "<Leader>fd",
+--  '<Esc> :lua require("telescope").search_dotfiles()<CR>'
+--)
