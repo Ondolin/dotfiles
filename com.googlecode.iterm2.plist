@@ -4,16 +4,6 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>BootstrapDaemon</key>
 	<false/>
 	<key>ConvertDosNewlines</key>
@@ -26,6 +16,8 @@
 	<false/>
 	<key>DimOnlyText</key>
 	<false/>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>EscapeShellCharsWithBackslash</key>
@@ -52,14 +44,16 @@
 			<key>Text</key>
 			<string>\\c \&lt;cr\&gt;gv\&lt;cr\&gt;</string>
 		</dict>
-		<key>0x66-0x40000-0x3</key>
+		<key>0x6f-0x40000-0x1f</key>
 		<dict>
 			<key>Action</key>
-			<integer>58</integer>
+			<integer>13</integer>
 			<key>Label</key>
 			<string></string>
 			<key>Text</key>
 			<string></string>
+			<key>Version</key>
+			<integer>0</integer>
 		</dict>
 		<key>0x73-0x100000-0x1</key>
 		<dict>
@@ -195,6 +189,8 @@
 			<string></string>
 			<key>AWDS Window Option</key>
 			<string>No</string>
+			<key>Allow modifyOtherKeys</key>
+			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1047,22 +1043,20 @@
 						<dict>
 							<key>knobs</key>
 							<dict>
-								<key>base: compression resistance</key>
-								<integer>1</integer>
 								<key>base: priority</key>
-								<real>5</real>
+								<real>1</real>
 								<key>shared text color</key>
 								<dict>
 									<key>Alpha Component</key>
 									<real>1</real>
 									<key>Blue Component</key>
-									<real>0.63</real>
+									<real>0.62999999523162842</real>
 									<key>Color Space</key>
 									<string>sRGB</string>
 									<key>Green Component</key>
-									<real>0.90000000000000002</real>
+									<real>0.89999997615814209</real>
 									<key>Red Component</key>
-									<real>0.67859999999999998</real>
+									<real>0.678600013256073</real>
 								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
@@ -1126,51 +1120,13 @@
 								<key>base: compression resistance</key>
 								<integer>1</integer>
 								<key>base: priority</key>
-								<real>5</real>
+								<real>2</real>
 								<key>maxwidth</key>
 								<real>+infinity</real>
 								<key>minwidth</key>
 								<integer>0</integer>
 								<key>path</key>
 								<string>path</string>
-							</dict>
-							<key>layout advanced configuration dictionary value</key>
-							<dict>
-								<key>algorithm</key>
-								<integer>0</integer>
-								<key>auto-rainbow style</key>
-								<integer>0</integer>
-								<key>remove empty components</key>
-								<false/>
-							</dict>
-						</dict>
-					</dict>
-					<dict>
-						<key>class</key>
-						<string>iTermStatusBarHostnameComponent</string>
-						<key>configuration</key>
-						<dict>
-							<key>knobs</key>
-							<dict>
-								<key>base: compression resistance</key>
-								<integer>1</integer>
-								<key>base: priority</key>
-								<real>5</real>
-								<key>path</key>
-								<string>hostname</string>
-								<key>shared text color</key>
-								<dict>
-									<key>Alpha Component</key>
-									<real>1</real>
-									<key>Blue Component</key>
-									<real>0.77580000000000005</real>
-									<key>Color Space</key>
-									<string>sRGB</string>
-									<key>Green Component</key>
-									<real>0.63</real>
-									<key>Red Component</key>
-									<real>0.90000000000000002</real>
-								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
@@ -1273,7 +1229,7 @@
 	<key>SeparateStatusBarsPerPane</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
