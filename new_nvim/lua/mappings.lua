@@ -14,6 +14,12 @@ end
 -- Escape redraws the screen and removes any search highlighting.
 nnoremap("<esc>", ":noh<return><esc>")
 
+-- TAB in normal mode will move to text buffer
+nnoremap("<TAB>", ":bnext<CR>", true)
+-- SHIFT-TAB will go back
+nnoremap("<S-TAB>", ":bprevious<CR>", true)
+
+
 -- LSP
 nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>", true)
 nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", true)
@@ -39,16 +45,9 @@ nnoremap("<Leader>lE", "<cmd>LspTroubleWorkspaceToggle<CR>", true)
 
 -- Telescope
 nnoremap("<Leader>f", '<cmd>Telescope find_files<CR>')
--- nnoremap("/", '<cmd>Telescope current_buffer_fuzzy_find<CR>')
+nnoremap("<C-Tab>", '<cmd>Telescope buffers<CR>')
+nnoremap("<C-f>", '<cmd>Telescope current_buffer_fuzzy_find<CR>')
 inoremap(
   "<C-f>",
-  '<Esc> :lua require("telescope").search_in_buffer()<CR>'
+  '<Esc><cmd>Telescope current_buffer_fuzzy_find<CR>'
 )
---nnoremap(
---  "<Leader>fg",
---  '<Esc> :lua require("telescope.builtin").live_grep()<CR>'
---)
---nnoremap(
---  "<Leader>fd",
---  '<Esc> :lua require("telescope").search_dotfiles()<CR>'
---)

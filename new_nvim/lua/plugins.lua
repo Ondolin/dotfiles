@@ -3,6 +3,10 @@ require('packer').startup(function()
 
   use 'dracula/vim' -- Theme	
 
+  -- Statusline
+  use 'vim-airline/vim-airline'
+  use 'vim-airline/vim-airline-themes'
+
   use 'wbthomason/packer.nvim' -- Package manager
   use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
 
@@ -19,15 +23,18 @@ require('packer').startup(function()
 
   use "lukas-reineke/indent-blankline.nvim"
 
-  use 'simrat39/rust-tools.nvim'
-  
-  -- Statusline
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
-
+  -- set relatrive line numbers only when current buffer is selected
   use 'jeffkreeftmeijer/vim-numbertoggle'
 
+  -- =====================
+  -- CODING TOOLS
+  -- =====================
+
   use("windwp/nvim-autopairs")
+
+  use 'tpope/vim-commentary'
+
+  use 'simrat39/rust-tools.nvim'
 
   -- Latex support
   use("lervag/vimtex")
@@ -50,6 +57,17 @@ require('packer').startup(function()
     requires = { { "nvim-telescope/telescope.nvim" } } 
   })
 
-  -- use {'nvim-telescope/telescope-ui-select.nvim' }
+  use {'nvim-telescope/telescope-ui-select.nvim' }
+
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      {'tami5/sqlite.lua', module = 'sqlite'},
+      {'nvim-telescope/telescope.nvim'},
+    },
+    config = function()
+      require('neoclip').setup()
+    end,
+  }
 
 end)
