@@ -17,14 +17,14 @@ require('packer').startup(function()
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
-    use "lukas-reineke/cmp-rg"
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use {'hrsh7th/cmp-copilot', requires = 'github/copilot.vim'}
 
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/cmp-nvim-lua'
     use 'hrsh7th/cmp-omni'
-    use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
+    use({'petertriho/cmp-git', requires = 'nvim-lua/plenary.nvim'})
 
     use {
         'saecki/crates.nvim',
@@ -35,9 +35,9 @@ require('packer').startup(function()
         end,
     }
 
-    use "rafamadriz/friendly-snippets"
+    use 'rafamadriz/friendly-snippets'
 
-    use "lukas-reineke/indent-blankline.nvim"
+    use 'lukas-reineke/indent-blankline.nvim'
 
     -- set relatrive line numbers only when current buffer is selected
     use 'jeffkreeftmeijer/vim-numbertoggle'
@@ -48,37 +48,37 @@ require('packer').startup(function()
     -- CODING TOOLS
     -- =====================
 
-    use("windwp/nvim-autopairs")
+    use 'windwp/nvim-autopairs'
 
     use 'tpope/vim-commentary'
 
     use 'simrat39/rust-tools.nvim'
 
     -- Latex support
-    use("lervag/vimtex")
+    use 'lervag/vimtex'
 
     -- =====================
     -- TELESCOPE
     -- =====================
     use({
-        "nvim-telescope/telescope.nvim",
-        requires = { { "nvim-lua/plenary.nvim" }, { "nvim-lua/popup.nvim" } },
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' }, { 'nvim-lua/popup.nvim' } },
     })
     use({
-        "romgrk/fzy-lua-native",
-        requires = { { "nvim-telescope/telescope.nvim" } },
+        'romgrk/fzy-lua-native',
+        requires = { { 'nvim-telescope/telescope.nvim' } },
     })
 
     use ({
         'nvim-telescope/telescope-fzf-native.nvim',
         run = 'make',
-        requires = { { "nvim-telescope/telescope.nvim" } }
+        requires = { { 'nvim-telescope/telescope.nvim' } }
     })
 
     use {'nvim-telescope/telescope-ui-select.nvim' }
 
     use {
-        "AckslD/nvim-neoclip.lua",
+        'AckslD/nvim-neoclip.lua',
         requires = {
           {'tami5/sqlite.lua', module = 'sqlite'},
           {'nvim-telescope/telescope.nvim'},
@@ -89,13 +89,18 @@ require('packer').startup(function()
     }
 
     use {
-        "brymer-meneses/grammar-guard.nvim",
+        'brymer-meneses/grammar-guard.nvim',
         requires = {
-            "neovim/nvim-lspconfig",
-            "williamboman/nvim-lsp-installer"
+            'neovim/nvim-lspconfig',
+            'williamboman/nvim-lsp-installer'
         }
     }
 
+    -- =====================
+    -- USEFUL TOOLS
+    -- =====================
+
+    use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
 
 end)
