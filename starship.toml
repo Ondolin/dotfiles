@@ -35,6 +35,7 @@ $purescript\
 $python\
 $ruby\
 $rust\
+$lua\
 $scala\
 $swift\
 $terraform\
@@ -51,7 +52,6 @@ $crystal\
 $custom\
 $cmd_duration\
 $line_break\
-$lua\
 $jobs\
 $time\
 $status\
@@ -91,7 +91,7 @@ symbol = " "
 always_show_remote = false
 format = "[on $symbol$branch]($style) "
 style = "purple bold"
-truncation_length = "2^63 - 1"
+truncation_length = 9223372036854775807
 truncation_symbol = "…"
 only_attached = false
 disabled = false
