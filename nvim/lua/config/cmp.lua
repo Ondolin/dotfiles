@@ -10,7 +10,7 @@ local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
-local next_item = function(fallback)
+local next_item_tab = function(fallback)
     if cmp.visible() then
         cmp.select_next_item()
     elseif vim.fn["vsnip#available"](1) == 1 then
@@ -22,11 +22,23 @@ local next_item = function(fallback)
     end
 end
 
-local previous_item = function()
+local next_item_arrow = function(fallback)
+    if cmp.visible() then
+        cmp.select_next_item()
+    elseif vim.fn["vsnip#available"](1) == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+    else
+        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+    end
+end
+
+local previous_item = function(fallback)
     if cmp.visible() then
         cmp.select_prev_item()
     elseif vim.fn["vsnip#jumpable"](-1) == 1 then
         feedkey("<Plug>(vsnip-jump-prev)", "")
+    else
+        fallback()
     end
 end
 
@@ -49,8 +61,8 @@ cmp.setup({
             c = cmp.mapping.close(),
         }),
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
-        ["<Tab>"] = cmp.mapping(next_item, { "i", "s" }),
-        ["<Down>"] = cmp.mapping(next_item, { "i", "s" }),
+        ["<Tab>"] = cmp.mapping(next_item_tab, { "i", "s" }),
+        ["<Down>"] = cmp.mapping(next_item_arrow, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(previous_item, { "i", "s" }),
         ["<Up>"] = cmp.mapping(previous_item, { "i", "s" }),
     },
@@ -102,10 +114,11 @@ cmp.setup.cmdline('/', {
     }
 })
 
--- cmp.setup.cmdline(':', {
---   sources = cmp.config.sources({
---     { name = 'path' }
---   }, {
---     { name = 'cmdline' },
---   })
--- })
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' },
+    })
+})
