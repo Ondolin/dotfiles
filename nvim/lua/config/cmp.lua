@@ -105,6 +105,7 @@ cmp.setup({
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
         { name = 'cmp_git' },
+        { name = 'cmp_tabnine' },
     }, {
         { name = 'buffer' },
     })
