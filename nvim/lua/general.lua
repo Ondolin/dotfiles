@@ -31,3 +31,6 @@ vim.opt.scrolloff = 8
 vim.opt.conceallevel=2
 
 vim.opt.completeopt = "menuone,noinsert,noselect"
+
+vim.opt.undofile = true
+vim.opt.undodir = "~/.vim/undo/
