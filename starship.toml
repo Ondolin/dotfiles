@@ -45,7 +45,6 @@ $nix_shell\
 $conda\
 $memory_usage\
 $aws\
-$gcloud\
 $openstack\
 $env_var\
 $crystal\
