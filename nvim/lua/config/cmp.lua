@@ -82,7 +82,8 @@ cmp.setup({
                 nvim_lsp = "[LSP]",
                 path = "[PATH]",
                 vsnip = "[SNIP]",
-                cmp_git = "[GIT]"
+                cmp_git = "[GIT]",
+                cmp_tabnine = "[TAB]"
             })
         })
     },
@@ -92,7 +93,8 @@ cmp.setup({
         -- { name = 'omni' },
         { name = 'vsnip' },
         { name = 'nvim_lua' },
-        { name = 'rg' }
+        -- { name = 'rg' },
+        -- { name = 'cmp_tabnine' },
     }, {
         { name = 'buffer' },
     })

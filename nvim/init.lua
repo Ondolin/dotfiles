@@ -9,6 +9,7 @@ require("config/rust-tools")
 require("config/prolog")
 require("config/telescope")
 require("config/latex")
+require("config/tabnine")
 
 require("mappings")
 
