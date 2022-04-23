@@ -1,4 +1,3 @@
--- Setup nvim-cmp.
 local cmp = require'cmp'
 local lspkind = require('lspkind')
 
@@ -11,6 +10,25 @@ local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
+local next_item = function(fallback)
+    if cmp.visible() then
+        cmp.select_next_item()
+    elseif vim.fn["vsnip#available"](1) == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+    elseif has_words_before() then
+        cmp.complete()
+    else
+        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+    end
+end
+
+local previous_item = function()
+    if cmp.visible() then
+        cmp.select_prev_item()
+    elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+        feedkey("<Plug>(vsnip-jump-prev)", "")
+    end
+end
 
 cmp.setup({
   snippet = {
@@ -26,26 +44,15 @@ cmp.setup({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    ['<CR>'] = cmp.mapping.confirm({ select = false }),
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif vim.fn["vsnip#available"](1) == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-      end
-    end, { "i", "s" }),
-
-    ["<S-Tab>"] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
-      end
-    end, { "i", "s" }),
+    ['<Esc>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
+     ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ["<Tab>"] = cmp.mapping(next_item, { "i", "s" }),
+    ["<Down>"] = cmp.mapping(next_item, { "i", "s" }),
+    ["<S-Tab>"] = cmp.mapping(previous_item, { "i", "s" }),
+    ["<Up>"] = cmp.mapping(previous_item, { "i", "s" }),
   },
   formatting = {
     format = lspkind.cmp_format({
@@ -55,22 +62,32 @@ cmp.setup({
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
       before = function (entry, vim_item)
-        -- ...
         return vim_item
       end,
       menu = ({
           buffer = "[BUF]",
+          omni = "[OMNI]",
           nvim_lsp = "[LSP]",
           path = "[PATH]",
-          vsnip = "[SNIP]"
+          vsnip = "[SNIP]",
+          cmp_git = "[GIT]"
       })
     })
   },
+  -- completion = {
+  --   keyword_length = 1,
+  --   completeopt = "menu,noselect"
+  -- },
+  -- view = {
+  --   entries = 'custom',
+  -- },
   sources = cmp.config.sources({
     { name = 'path' },
     { name = 'nvim_lsp' },
+    -- { name = 'omni' },
     { name = 'vsnip' },
     { name = 'nvim_lua' },
+    { name = 'rg' }
   }, {
     { name = 'buffer' },
   })
@@ -84,16 +101,18 @@ cmp.setup.filetype('gitcommit', {
   })
 })
 
+require("cmp_git").setup()
+
 cmp.setup.cmdline('/', {
   sources = {
     { name = 'buffer' }
   }
 })
 
-cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
+-- cmp.setup.cmdline(':', {
+--   sources = cmp.config.sources({
+--     { name = 'path' }
+--   }, {
+--     { name = 'cmdline' },
+--   })
+-- })

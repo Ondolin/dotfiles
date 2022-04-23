@@ -33,8 +33,8 @@ alias lt='exa --tree --level=2 --icons'
 alias m="goto"
 
 # print cow at terminal start
-#alias cow="clear; fortune ~/.config/fortunes/fortunes | cowsay | lolcat"
-alias cow="clear; (curl -s -Hs \"Accept: text/plain\" https://icanhazdadjoke.com/ || echo \"You have no internet connection!\") | cowsay | lolcat"
+alias cow="clear; fortune ~/.config/fortunes/fortunes_new | cowsay | lolcat"
+# alias cow="clear; (curl -s -Hs \"Accept: text/plain\" https://icanhazdadjoke.com/ || echo \"You have no internet connection!\") | cowsay | lolcat"
 
 alias cp="cp -iv -r"
 alias mv="mv -iv"

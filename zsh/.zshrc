@@ -30,7 +30,7 @@ export LANG=en_US.UTF-8
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR='nvim'
 
-zstyle ':completion:*:(ssh|scp|ftp|sftp):*' hosts $hosts
+zstyle ':completion:*:(ssh|scp|ftp|sftp|rsync):*' hosts $hosts
 
 function ranger {
     local IFS=$'\t\n'
@@ -62,3 +62,5 @@ source ~/.config/mcfly.zsh
 eval "$(zoxide init zsh --cmd cd)"
 
 source ~/.zsh_alias
+
+source /Users/kaiser/.config/broot/launcher/bash/br

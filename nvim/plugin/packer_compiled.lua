@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
+  ["cmp-git"] = {
+    loaded = true,
+    path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/cmp-git",
+    url = "https://github.com/petertriho/cmp-git"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -89,15 +94,31 @@ _G.packer_plugins = {
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
     url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
+  ["cmp-omni"] = {
+    loaded = true,
+    path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/cmp-omni",
+    url = "https://github.com/hrsh7th/cmp-omni"
+  },
   ["cmp-path"] = {
     loaded = true,
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-rg"] = {
+    loaded = true,
+    path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/cmp-rg",
+    url = "https://github.com/lukas-reineke/cmp-rg"
+  },
   ["cmp-vsnip"] = {
     loaded = true,
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
+  ["crates.nvim"] = {
+    config = { "\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0" },
+    loaded = true,
+    path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/crates.nvim",
+    url = "https://github.com/saecki/crates.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -222,6 +243,11 @@ _G.packer_plugins = {
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/vim-numbertoggle",
     url = "https://github.com/jeffkreeftmeijer/vim-numbertoggle"
   },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/vim-vsnip",
@@ -263,6 +289,10 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
+-- Config for: crates.nvim
+time([[Config for crates.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
+time([[Config for crates.nvim]], false)
 -- Config for: nvim-neoclip.lua
 time([[Config for nvim-neoclip.lua]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")

@@ -17,10 +17,22 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  use "lukas-reineke/cmp-rg"
 
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-omni'
+  use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
+
+  use {
+    'saecki/crates.nvim',
+    tag = 'v0.2.1',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require('crates').setup()
+    end,
+  }
 
   use "rafamadriz/friendly-snippets"
 
@@ -82,5 +94,7 @@ require('packer').startup(function()
         "williamboman/nvim-lsp-installer"
     }
   }
+
+  use 'tpope/vim-repeat'
 
 end)
