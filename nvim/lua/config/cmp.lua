@@ -83,7 +83,8 @@ cmp.setup({
                 path = "[PATH]",
                 vsnip = "[SNIP]",
                 cmp_git = "[GIT]",
-                cmp_tabnine = "[TAB]"
+                cmp_tabnine = "[TAB]",
+                copilot = "[COP]",
             })
         })
     },
@@ -95,6 +96,7 @@ cmp.setup({
         { name = 'nvim_lua' },
         -- { name = 'rg' },
         -- { name = 'cmp_tabnine' },
+        { name = 'copilot' },
     }, {
         { name = 'buffer' },
     })
