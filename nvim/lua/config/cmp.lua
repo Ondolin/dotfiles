@@ -147,9 +147,9 @@ local function load_cmp_sources(sources)
 end
 
 local compleat_sources = {
-    { {'tex'}, {'path', 'cmp_tabnine', 'vsnip', 'copilot', 'buffer'} },
-    { {'lua'}, {'path', 'vsnip', 'buffer', 'nvim_lua'} },
-    { {'toml'}, {'path', 'crates', 'vsnip'} }
+    { {'tex'}, {'path', 'nvim_lsp', 'cmp_tabnine', 'vsnip', 'copilot', 'buffer'} },
+    { {'lua'}, {'path', 'nvim_lsp', 'vsnip', 'buffer', 'nvim_lua'} },
+    { {'toml'}, {'path', 'nvim_lsp', 'crates', 'vsnip'} }
 }
 
 load_cmp_sources(compleat_sources)

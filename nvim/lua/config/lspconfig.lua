@@ -34,6 +34,16 @@ lspconfig.grammar_guard.setup({
       },
   })
 
-lspconfig.tsserver.setup{}
+lspconfig.tsserver.setup{
+    capabilities = capabilities
+}
 
 lspconfig.sumneko_lua.setup{}
+
+lspconfig.taplo.setup{
+    capabilities = capabilities
+}
+
+lspconfig.jsonls.setup {
+  capabilities = capabilities,
+}
