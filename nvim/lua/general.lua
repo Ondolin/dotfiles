@@ -33,3 +33,6 @@ vim.opt.conceallevel=2
 vim.opt.completeopt = "menuone,noinsert,noselect"
 
 vim.opt.undofile = true
+
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { 'en_us' }

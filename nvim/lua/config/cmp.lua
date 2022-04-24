@@ -42,69 +42,134 @@ local previous_item = function(fallback)
     end
 end
 
-cmp.setup({
-    snippet = {
-        expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body)
-        end,
-    },
-    mapping = {
-        ['<C-j>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-        ['<C-k>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-        ['<C-e>'] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
-        ['<Esc>'] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
-        ["<Tab>"] = cmp.mapping(next_item_tab, { "i", "s" }),
-        ["<Down>"] = cmp.mapping(next_item_arrow, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(previous_item, { "i", "s" }),
-        ["<Up>"] = cmp.mapping(previous_item, { "i", "s" }),
-    },
-    formatting = {
-        format = lspkind.cmp_format({
-            mode = 'symbol_text',
-            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+local function has_value (tab, val)
+    for _, value in ipairs(tab) do
+        if value == val then
+            return true
+        end
+    end
 
-            -- The function below will be called before any actual modifications from lspkind
-            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-            before = function (entry, vim_item)
-                return vim_item
+    return false
+end
+
+local disabled_compleations = {}
+
+local function load_cmp()
+    local sources = {'path', 'nvim_lsp', 'vsnip'}
+
+    -- table.insert(sources, 'copilot')
+    -- table.insert(sources, 'cmp_tabnine')
+
+    local sources_conf = {}
+
+    for _, source in pairs(sources) do
+        if not has_value(disabled_compleations, source) then
+            table.insert(sources_conf, { name = source })
+        end
+    end
+
+    cmp.setup({
+        snippet = {
+            expand = function(args)
+                vim.fn["vsnip#anonymous"](args.body)
             end,
-            menu = ({
-                buffer = "[BUF]",
-                omni = "[OMNI]",
-                nvim_lsp = "[LSP]",
-                path = "[PATH]",
-                vsnip = "[SNIP]",
-                cmp_git = "[GIT]",
-                cmp_tabnine = "[TAB]",
-                copilot = "[COP]",
+        },
+        mapping = {
+            ['<C-k>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+            ['<C-j>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+            ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+            ['<C-e>'] = cmp.mapping({
+                i = cmp.mapping.abort(),
+                c = cmp.mapping.close(),
+            }),
+            ['<Esc>'] = cmp.mapping(function(fallback)
+                fallback()
+            end, {
+                i = cmp.mapping.abort(),
+                c = cmp.mapping.close(),
+            }),
+            ['<CR>'] = cmp.mapping.confirm({ select = false }),
+            ["<Tab>"] = cmp.mapping(next_item_tab, { "i", "s" }),
+            ["<Down>"] = cmp.mapping(next_item_arrow, { "i", "s" }),
+            ["<S-Tab>"] = cmp.mapping(previous_item, { "i", "s" }),
+            ["<Up>"] = cmp.mapping(previous_item, { "i", "s" }),
+        },
+        formatting = {
+            format = lspkind.cmp_format({
+                mode = 'symbol_text',
+                maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+                -- The function below will be called before any actual modifications from lspkind
+                -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+                before = function (entry, vim_item)
+                    return vim_item
+                end,
+                menu = ({
+                    buffer = "[BUF]",
+                    omni = "[OMNI]",
+                    nvim_lsp = "[LSP]",
+                    path = "[PATH]",
+                    vsnip = "[SNIP]",
+                    cmp_git = "[GIT]",
+                    cmp_tabnine = "[TAB]",
+                    copilot = "[COP]",
+                })
             })
-        })
-    },
-    sources = cmp.config.sources({
-        { name = 'path' },
-        { name = 'nvim_lsp' },
-        -- { name = 'omni' },
-        { name = 'vsnip' },
-        { name = 'nvim_lua' },
-        -- { name = 'rg' },
-        -- { name = 'cmp_tabnine' },
-        { name = 'copilot' },
-    }, {
-        { name = 'buffer' },
+        },
+        sources = cmp.config.sources(sources_conf)
     })
-})
+
+
+end
+
+load_cmp()
+
+local function load_cmp_sources(sources)
+    for _, source in ipairs(sources) do
+
+        for _, filetype in pairs(source[1]) do
+
+            local conf = {}
+            for _, c in pairs(source[2]) do
+                if not has_value(disabled_compleations, c) then
+                    table.insert(conf, { name = c })
+                end
+            end
+
+            cmp.setup.filetype(filetype, {
+                sources = cmp.config.sources(conf)
+            })
+
+        end
+
+    end
+
+end
+
+local compleat_sources = {
+    { {'tex'}, {'path', 'cmp_tabnine', 'vsnip', 'copilot', 'buffer'} },
+    { {'lua'}, {'path', 'vsnip', 'buffer', 'nvim_lua'} },
+    { {'toml'}, {'path', 'crates', 'vsnip'} }
+}
+
+load_cmp_sources(compleat_sources)
+
+vim.api.nvim_create_user_command('DisableCopilot', function()
+    table.insert(disabled_compleations, 'copilot')
+    load_cmp_sources(compleat_sources)
+    load_cmp()
+end, { force = true })
+
+vim.api.nvim_create_user_command('DisableTabnine', function()
+    table.insert(disabled_compleations, 'cmp_tabnine')
+    load_cmp_sources(compleat_sources)
+    load_cmp()
+end, { force = true })
 
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
         { name = 'cmp_git' },
+        { name = 'vsnip' },
         { name = 'cmp_tabnine' },
     }, {
         { name = 'buffer' },
