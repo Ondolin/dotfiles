@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/kaiser/.oh-my-zsh"
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$HOME/.pub-cache/bin:$PATH"
 
 #Standard:robbyrussell 
 ZSH_THEME="agnoster"
@@ -18,7 +18,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 IST_STAMPS="yyyy-mm-dd"
 
-plugins=(git fzf cp rust zsh-autosuggestions)
+plugins=(git fzf cp rust zsh-autosuggestions flutter)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -59,7 +59,7 @@ eval "$(starship init zsh)"
 source ~/.config/mcfly.zsh
 
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval "$(zoxide init zsh --cmd cd)"
+# eval "$(zoxide init zsh --cmd cd)"
 
 source ~/.zsh_alias
 

@@ -52,5 +52,7 @@ inoremap(
   '<Esc><cmd>Telescope current_buffer_fuzzy_find<CR>'
 )
 
+nnoremap("<Leader>n", '<cmd>NERDTreeFocus<CR>')
+
 nnoremap("z=", '<cmd>Telescope spell_suggest <CR>')
 nnoremap("<C-v>", '<cmd>Telescope neoclip <CR>')

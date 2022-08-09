@@ -13,6 +13,14 @@ lspconfig.prolog_lsp.setup{
     capabilities = capabilities
 }
 
+lspconfig.vuels.setup{
+    capabilities = capabilities
+}
+
+lspconfig.tailwindcss.setup{
+    capabilities = capabilities
+}
+
 require("grammar-guard").init()
 lspconfig.grammar_guard.setup({
     cmd = { '/usr/local/bin/ltex-ls' },
@@ -46,4 +54,16 @@ lspconfig.taplo.setup{
 
 lspconfig.jsonls.setup {
   capabilities = capabilities,
+}
+
+lspconfig.dockerls.setup{
+    capabilities = capabilities
+}
+
+lspconfig.bashls.setup{
+    capabilities = capabilities
+}
+
+lspconfig.dartls.setup{
+    capabilities = capabilities
 }

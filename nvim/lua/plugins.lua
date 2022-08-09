@@ -2,6 +2,7 @@ local use = require('packer').use
 require('packer').startup(function()
 
     use 'dracula/vim' -- Theme
+    use 'altercation/vim-colors-solarized'
 
     -- Statusline
     use 'vim-airline/vim-airline'
@@ -102,5 +103,12 @@ require('packer').startup(function()
 
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
+
+    use 'lstwn/broot.vim'
+
+    use 'NoahTheDuke/vim-just'
+
+    use 'preservim/nerdtree'
+
 
 end)

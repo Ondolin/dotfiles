@@ -1,0 +1,53 @@
+
+Error detected while processing function vimtex#init[8]..<SNR>16_init_buffer[77]..vimtex#matchparen#init_buffer[3]..vimtex#matchparen#enable[1]..182[18]..185[1]..184:
+line    1:
+E121: Undefined variable: w:vimtex_match_id1
+Error detected while processing function vimtex#init[8]..<SNR>16_init_buffer[77]..vimtex#matchparen#init_buffer[3]..vimtex#matchparen#enable[1]..182[18]..185[1]..184:
+line    1:
+E116: Invalid arguments for function matchdelete
+Error detected while processing function vimtex#init[8]..<SNR>16_init_buffer[77]..vimtex#matchparen#init_buffer[3]..vimtex#matchparen#enable[1]..182[18]..185[1]..184:
+line    2:
+E121: Undefined variable: w:vimtex_match_id2
+Error detected while processing function vimtex#init[8]..<SNR>16_init_buffer[77]..vimtex#matchparen#init_buffer[3]..vimtex#matchparen#enable[1]..182[18]..185[1]..184:
+line    2:
+E116: Invalid arguments for function matchdelete
+"init.lua" 25L, 727B
+Reading undo file: /Users/kaiser/.local/share/nvim/undo/%Users%kaiser%Development%dotfiles%nvim%init.lua
+
+NVIM v0.7.0
+Build type: Release
+LuaJIT 2.1.0-beta3
+Compiled by brew@Monterey
+
+Features: +acl +iconv +tui
+See ":help feature-compile"
+
+   system vimrc file: "$VIM/sysinit.vim"
+  fall-back for $VIM: "/usr/local/Cellar/neovim/0.7.0/share/nvim"
+
+Run :checkhealth for more info
+
+Error detected while processing function 184:
+line    1:
+E121: Undefined variable: w:vimtex_match_id1
+Error detected while processing function 184:
+line    1:
+E116: Invalid arguments for function matchdelete
+Error detected while processing function 184:
+line    2:
+E121: Undefined variable: w:vimtex_match_id2
+Error detected while processing function 184:
+line    2:
+E116: Invalid arguments for function matchdelete-- TERMINAL --
+Error detected while processing function 185[1]..184:
+line    1:
+E121: Undefined variable: w:vimtex_match_id1
+Error detected while processing function 185[1]..184:
+line    1:
+E116: Invalid arguments for function matchdelete
+Error detected while processing function 185[1]..184:
+line    2:
+E121: Undefined variable: w:vimtex_match_id2
+Error detected while processing function 185[1]..184:
+line    2:
+E116: Invalid arguments for function matchdelete

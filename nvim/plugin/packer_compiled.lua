@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["broot.vim"] = {
+    loaded = true,
+    path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/broot.vim",
+    url = "https://github.com/lstwn/broot.vim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -155,6 +160,11 @@ _G.packer_plugins = {
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  nerdtree = {
+    loaded = true,
+    path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -238,6 +248,11 @@ _G.packer_plugins = {
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
   },
+  ["vim-colors-solarized"] = {
+    loaded = true,
+    path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/vim-colors-solarized",
+    url = "https://github.com/altercation/vim-colors-solarized"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -247,6 +262,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-just"] = {
+    loaded = true,
+    path = "/Users/kaiser/.local/share/nvim/site/pack/packer/start/vim-just",
+    url = "https://github.com/NoahTheDuke/vim-just"
   },
   ["vim-numbertoggle"] = {
     loaded = true,
@@ -304,14 +324,14 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Config for: crates.nvim
-time([[Config for crates.nvim]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
-time([[Config for crates.nvim]], false)
 -- Config for: nvim-neoclip.lua
 time([[Config for nvim-neoclip.lua]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")
 time([[Config for nvim-neoclip.lua]], false)
+-- Config for: crates.nvim
+time([[Config for crates.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
+time([[Config for crates.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

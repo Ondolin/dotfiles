@@ -34,5 +34,5 @@ vim.opt.completeopt = "menuone,noinsert,noselect"
 
 vim.opt.undofile = true
 
--- vim.opt.spell = true
--- vim.opt.spelllang = { 'en_us' }
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us', 'de_de' }
